@@ -1,11 +1,26 @@
+import 'package:bookly/Features/splash/presentation/home/presentation/views/home_view.dart';
+import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:get/get.dart';
 
-class SpalshViewBody extends StatelessWidget {
+class SpalshViewBody extends StatefulWidget {
   const SpalshViewBody({super.key});
+
+  @override
+  State<SpalshViewBody> createState() => _SpalshViewBodyState();
+}
+
+class _SpalshViewBodyState extends State<SpalshViewBody> {
+  @override
+  void initState() {
+    super.initState();
+
+    navigateToHome();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +35,20 @@ class SpalshViewBody extends StatelessWidget {
         const Text(
           'Read Free Books',
           textAlign: TextAlign.center,
-        ).animate().slide(begin: const Offset(0, 4), end: const Offset(0, 0)),
+        ).animate().slide(
+              begin: const Offset(0, 4),
+              end: const Offset(0, 0),
+              duration: KTransitionDuration,
+            )
       ],
     );
   }
+}
+
+//  Methods
+void navigateToHome() {
+  Future.delayed(const Duration(seconds: 2), () {
+    Get.to(() => const HomeView(),
+        transition: Transition.fade, duration: KTransitionDuration);
+  });
 }
