@@ -49,6 +49,6 @@ class _SpalshViewBodyState extends State<SpalshViewBody> {
 void navigateToHome() {
   Future.delayed(const Duration(seconds: 2), () {
     Get.to(() => const HomeView(),
-        transition: Transition.fade, duration: KTransitionDuration);
+        transition: Transition.fade, duration: KTransitionDuration,);
   });
 }
