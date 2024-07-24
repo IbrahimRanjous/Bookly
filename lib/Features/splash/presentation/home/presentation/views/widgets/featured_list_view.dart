@@ -1,4 +1,4 @@
-import 'package:bookly/Features/splash/presentation/home/presentation/views/featured_list_view.dart/custom_list_view_item.dart';
+import 'package:bookly/Features/splash/presentation/home/presentation/views/widgets/Featured_list_view_item.dart';
 import 'package:flutter/material.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
